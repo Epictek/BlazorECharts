@@ -2,11 +2,9 @@
     charts: {},
     init: function (id, theme = 'light', showLoading = true, opts = null) {
         console.log(opts);
-        chart = echarts.init(document.getElementById(id), theme, opts)
-        console.log(chart);
-        if (showLoading) {
-            chart.showLoading();
-        }
+        option = JSON.parse(opts);
+        chart = echarts.init(document.getElementById(id), theme)
+        chart.setOption(option);
         //charts[id] = chart;
     },
 

@@ -6,7 +6,7 @@ using Newtonsoft.Json.Serialization;
 
 namespace Tindo.Blazor.ECharts
 {
-    internal static class JSRuntimeExtension
+    public static class JSRuntimeExtension
     {
         public static JsonSerializerSettings Settings = new JsonSerializerSettings
         {
@@ -17,7 +17,7 @@ namespace Tindo.Blazor.ECharts
         public static async Task InitChart(this IJSRuntime runtime, string id, string theme="light", bool showLoading=true, object opts=null)
         {
             ValidateId(id);
-            await runtime.InvokeVoidAsync("invokeECharts.init", id, theme, showLoading, JsonConvert.SerializeObject(opts, Formatting.None, Settings));
+            await runtime.InvokeVoidAsync("invokeECharts.init", id, theme, showLoading, opts);
         }
 
         public static async Task ShowLoadingChart(this IJSRuntime runtime, string id)
