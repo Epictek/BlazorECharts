@@ -4,5 +4,7 @@
     {
         Top,
         Bottom,
+        Left,
+        Right,
     }
 }
