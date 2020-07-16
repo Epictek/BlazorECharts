@@ -8,10 +8,31 @@
     Draw
 </button>
 
+<button @onclick="Remove">
+    Remove
+</button>
+
+<button @onclick="Setup">
+    Setup
+</button>
+
 @code {
     private async void Show()
     {
-        var option = "{\"title\":{\"text\":\"ECharts 入门示例\"},\"tooltip\":{},\"legend\":{\"data\":[\"销量\"]},\"xAxis\":{\"data\":[\"衬衫\",\"羊毛衫\",\"雪纺衫\",\"裤子\",\"高跟鞋\",\"袜子\"]},\"yAxis\":{},\"series\":[{\"name\":\"销量\",\"type\":\"bar\",\"data\":[5,20,36,10,10,20]}]}";
-        await JSRuntime.InitChart("line1", "light", true, option);
+        var option = "{\"xAxis\":{\"type\":\"category\",\"data\":[\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\",\"Sat\",\"Sun\"]},\"yAxis\":{\"type\":\"value\"},\"series\":[{\"data\":[820,932,901,934,1290,1330,1320],\"type\":\"line\"}]}";
+        var opt = Newtonsoft.Json.JsonConvert.DeserializeObject<object>(option);
+        await JSRuntime.InitChart("line1", opt, "light");
+    }
+
+    private async void Remove()
+    {
+        await JSRuntime.RemoveChart("line1");
+    }
+
+    private async void Setup()
+    {
+        var option = "{\"xAxis\":{\"type\":\"category\",\"data\":[\"Mon\",\"Tue\",\"Wed\",\"Thu\",\"Fri\",\"Sat\",\"Sun\"]},\"yAxis\":{\"type\":\"value\"},\"series\":[{\"data\":[120,232,121,924,290,2330,4320],\"type\":\"line\", \"smooth\": true}]}";
+        var opt = Newtonsoft.Json.JsonConvert.DeserializeObject<object>(option);
+        await JSRuntime.SetupChart("line1", opt, true, true);
     }
 }

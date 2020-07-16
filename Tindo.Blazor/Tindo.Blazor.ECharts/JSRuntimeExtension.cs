@@ -14,16 +14,20 @@ namespace Tindo.Blazor.ECharts
             ContractResolver = new CamelCasePropertyNamesContractResolver()
         };
 
-        public static async Task InitChart(this IJSRuntime runtime, string id, string theme="light", bool showLoading=true, object opts=null)
+        public static async Task InitChart(this IJSRuntime runtime, string id, object opts = null, string theme="light")
         {
             ValidateId(id);
-            await runtime.InvokeVoidAsync("invokeECharts.init", id, theme, showLoading, opts);
+            await runtime.InvokeVoidAsync(
+                "invokeECharts.init", 
+                id, 
+                JsonConvert.SerializeObject(opts, Formatting.None, Settings), 
+                theme);
         }
 
-        public static async Task ShowLoadingChart(this IJSRuntime runtime, string id)
+        public static async Task RemoveChart(this IJSRuntime runtime, string id)
         {
             ValidateId(id);
-            await runtime.InvokeVoidAsync("invokeECharts.showLoading", id);
+            await runtime.InvokeVoidAsync("invokeECharts.remove", id);
         }
 
         public static async Task SetupChart(this IJSRuntime runtime, string id, object opts, bool? notMerge, bool? lazyUpdate)
