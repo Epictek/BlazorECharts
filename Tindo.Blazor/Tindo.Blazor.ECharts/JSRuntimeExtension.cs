@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.JSInterop;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
 
 namespace Tindo.Blazor.ECharts
@@ -11,7 +12,8 @@ namespace Tindo.Blazor.ECharts
         public static JsonSerializerSettings Settings = new JsonSerializerSettings
         {
             NullValueHandling = NullValueHandling.Ignore,
-            ContractResolver = new CamelCasePropertyNamesContractResolver()
+            ContractResolver = new CamelCasePropertyNamesContractResolver(),
+            Converters = { new StringEnumConverter(new CamelCaseNamingStrategy())}
         };
 
         public static async Task InitChart(this IJSRuntime runtime, string id, object opts = null, string theme="light")

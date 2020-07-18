@@ -1,12 +1,13 @@
-@page "/fetchdata"
+﻿@page "/line2"
 
-<TindoECharts Style="@style" Option="@option"></TindoECharts>
+<TindoECharts  Style="@style" Option="@option"></TindoECharts>
 
 <button @onclick="Show">
     Draw
 </button>
 
 @code {
+
     private string style = "width: 600px;height:400px;";
 
     private Option option;
@@ -15,21 +16,24 @@
     {
         option = new Option
         {
-            XAxis = new[] {new XAxis
+            XAxis = new[]{ new XAxis
             {
                 Type = AxisType.Category,
-                Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
+                Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" },
+                BoundaryGap = new string[] { "20%", "20%" }
             } },
 
             YAxis = new[] { new YAxis
             {
                 Type = AxisType.Value,
-            }},
+            } },
+
             Series = new Line[]
             {
                 new Line
                 {
-                    Data = new int[] { 820, 932, 901, 934, 1290, 1330, 1320 }
+                    Data = new int[] { 820, 932, 901, 934, 1290, 1330, 1320 },
+                    AreaStyle = new AreaStyle(),
                 }
             }
 

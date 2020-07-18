@@ -1,9 +1,8 @@
 ﻿namespace Tindo.Blazor.ECharts.Options
 {
-
-    public enum Subtarget
+    public enum LegendType
     {
-        Self,
-        Blank
+        Plain,
+        Scroll,
     }
 }

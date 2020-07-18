@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tindo.Blazor.ECharts.Options.Enums
+﻿namespace Tindo.Blazor.ECharts.Options.Enums
 {
     public class SplitLine
     {
@@ -11,7 +7,6 @@ namespace Tindo.Blazor.ECharts.Options.Enums
         public int Interval { get; set; }
 
         public LineStyle LineStyle { get; set; }
-
 
     }
 }
