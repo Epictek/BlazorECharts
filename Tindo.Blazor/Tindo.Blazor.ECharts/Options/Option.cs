@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using Newtonsoft.Json;
 using Tindo.Blazor.ECharts.Options.Series;
 
 namespace Tindo.Blazor.ECharts.Options
@@ -13,10 +14,21 @@ namespace Tindo.Blazor.ECharts.Options
 
         public Grid Grid { get; set; }
 
-        public XAxis[] XAxis { get; set; }
+        [JsonIgnore]
+        public UnionType<XAxis, XAxis[]>  XAxis { get; set; }
 
-        public YAxis[] YAxis { get; set; }
+        [JsonProperty("XAxis")]
+        public object XAxisValue => XAxis?.Value;
+
+        [JsonIgnore]
+        public UnionType<YAxis, YAxis[]> YAxis { get; set; }
+
+        [JsonProperty("YAxis")]
+        public object YAxisValue => YAxis?.Value;
 
         public SeriesBase[] Series { get; set; }
+
+
+        public VisualMap VisualMap { get; set; }
     }
 }

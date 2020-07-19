@@ -13,7 +13,7 @@
 
     private void Show()
     {
-        option = new Option
+        this.option = new Option
         {
             Title = new Title { Text = "堆叠区域图" },
             Tooltip = new Tooltip
@@ -66,12 +66,14 @@
                     Name = "邮件营销",
                     Stack = "总量",
                     Data = new []{120, 132, 101, 134, 90, 230, 210},
+                    AreaStyle = AreaStyle.Empty,
                 },
                 new Line
                 {
                     Name = "联盟广告",
                     Stack = "总量",
                     Data = new [] { 220, 182, 191, 234, 290, 330, 310 },
+                    AreaStyle = AreaStyle.Empty,
 
                 },
                 new Line
@@ -79,18 +81,21 @@
                     Name = "视频广告",
                     Stack = "总量",
                     Data = new [] {150, 232, 201, 154, 190, 330, 410},
+                    AreaStyle = AreaStyle.Empty,
                 },
                 new Line
                 {
                     Name = "直接访问",
                     Stack = "总量",
                     Data = new [] { 320, 332, 301, 334, 390, 330, 320 },
+                    AreaStyle = AreaStyle.Empty,
                 },
                 new Line
                 {
                     Name = "搜索引擎",
                     Stack = "总量",
-                    Data = new [] { 820, 932, 901, 934, 1290, 1330, 1320 }
+                    Data = new [] { 820, 932, 901, 934, 1290, 1330, 1320 },
+                    AreaStyle = AreaStyle.Empty,
                 }
             }
 

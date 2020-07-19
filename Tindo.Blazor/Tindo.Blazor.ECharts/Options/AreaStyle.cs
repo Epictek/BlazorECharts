@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
-using Tindo.Blazor.ECharts.Options.Enums;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using Newtonsoft.Json;
+using Tindo.Blazor.ECharts.Options.Enums;
 
 namespace Tindo.Blazor.ECharts.Options
 {
@@ -26,8 +21,14 @@ namespace Tindo.Blazor.ECharts.Options
         [Range(0, 1.0, ErrorMessage ="Opacity should be between 0 to 1")]
         public double Opacity { get; set; }
 
-        private static AreaStyle empty = new AreaStyle();
+        public static AreaStyle Empty => new AreaStyleEmpty();
 
-        public static AreaStyle Empty => AreaStyle.empty;
     }
+
+    [JsonConverter(typeof(EmptyConverter))]
+    internal class AreaStyleEmpty : AreaStyle
+    {
+
+    }
+    
 }

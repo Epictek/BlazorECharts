@@ -1,0 +1,85 @@
+﻿@page "/line5"
+<TindoECharts Style="@style" Option="@option"></TindoECharts>
+
+<button @onclick="Show">
+    Draw
+</button>
+
+@code {
+    private string style = "width: 800px;height:400px;";
+
+    private Option option;
+
+    public void Show()
+    {
+        this.option = new Option
+        {
+            XAxis = new XAxis
+            {
+                Type = AxisType.Category,
+                BoundaryGap = false,
+            },
+
+            YAxis = new YAxis
+            {
+                Type = AxisType.Value,
+                BoundaryGap = new object[] {0, "30%"},
+            },
+
+            VisualMap = new PiecewiseVisualMap
+            {
+                Show = false,
+                Dimension = 0,
+                SeriesIndex = 0,
+                Pieces = new JsonObject[]
+                {
+                     "{gt:1, lt:3, color: 'rgba(0, 180, 0, 0.5)'}",
+                     "{gt:5, lt:7, color: 'rgba(0, 180, 0, 0.5)'}"
+                },
+            },
+            Series = new Line[]
+            {
+                new Line
+                {
+                    Smooth = 0.6,
+                    Symbol = SeriesSymbol.None,
+                    LineStyle = new LineStyle
+                    {
+                        Color = "green",
+                        Width = 5,
+                    },
+                    MarkLine = new MarkLine
+                    {
+                        Symbol = new []{SeriesSymbol.RoundRect, SeriesSymbol.Circle},
+                        Label = new MarkLineLabel
+                        {
+                            Show=false,
+                        },
+                        Data = new JsonObject[]
+                        {
+                            "{xAxis:1}",
+                            "{xAxis:3}",
+                            "{xAxis:5}",
+                            "{xAxis:7}"
+                        }
+                    },
+                    AreaStyle = AreaStyle.Empty,
+                    Data = new JsonObject[]
+                    {
+                        "['2019-10-10', 200]",
+                        "['2019-10-11', 400]",
+                        "['2019-10-12', 650]",
+                        "['2019-10-13', 500]",
+                        "['2019-10-14', 250]",
+                        "['2019-10-15', 300]",
+                        "['2019-10-16', 450]",
+                        "['2019-10-17', 300]",
+                        "['2019-10-18', 100]"
+                    }
+                },
+            },
+        };
+        StateHasChanged();
+    }
+}
+
