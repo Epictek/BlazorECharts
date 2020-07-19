@@ -1,0 +1,1 @@
+[Online Demo](https://blazorecharts.azurewebsites.net/)

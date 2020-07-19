@@ -1,4 +1,4 @@
-@page "/fetchdata"
+﻿@page "/smoothed-line"
 
 <TindoECharts Style="@style" Option="@option"></TindoECharts>
 
@@ -15,23 +15,25 @@
     {
         option = new Option
         {
-            XAxis = new[] {new XAxis
+            XAxis = new[] { new XAxis
             {
                 Type = AxisType.Category,
-                Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
-            } },
+                Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" },
+            }} ,
 
             YAxis = new[] { new YAxis
             {
                 Type = AxisType.Value,
-            }},
+            } } ,
+
             Series = new Line[]
             {
                 new Line
                 {
-                    Data = new int[] { 820, 932, 901, 934, 1290, 1330, 1320 }
+                    Data = new int[] { 820, 932, 901, 934, 1290, 1330, 1320 },
+                    Smooth = true,
                 }
-            }
+                }
 
         };
         StateHasChanged();
