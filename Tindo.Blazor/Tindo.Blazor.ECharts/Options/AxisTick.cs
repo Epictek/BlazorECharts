@@ -4,7 +4,7 @@
     {
         public bool Show { get; set; }
 
-        public bool AlignWithLabel { get; set; }
+        public bool? AlignWithLabel { get; set; }
 
         public UnionType<string, int> Interval { get; set; }
 

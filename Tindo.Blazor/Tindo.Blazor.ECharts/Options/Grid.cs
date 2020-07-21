@@ -37,7 +37,7 @@ namespace Tindo.Blazor.ECharts.Options
         private object BottomValue => Bottom?.Value;
 
 
-        public bool ContainLabel { get; set; }
+        public bool? ContainLabel { get; set; }
 
     }
 }

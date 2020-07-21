@@ -1,43 +1,42 @@
 ﻿@page "/area-piece"
 <TindoECharts Style="@style" Option="@option"></TindoECharts>
 
-<button @onclick="Show">
-    Draw
-</button>
 
 @code {
     private string style = "width: 800px;height:400px;";
 
     private Option option;
 
-    public void Show()
+    protected override void OnAfterRender(bool firstRender)
     {
-        this.option = new Option
+        if(firstRender)
         {
-            XAxis = new XAxis
+            this.option = new Option
             {
-                Type = AxisType.Category,
-                BoundaryGap = false,
-            },
+                XAxis = new XAxis
+                {
+                    Type = AxisType.Category,
+                    BoundaryGap = false,
+                },
 
-            YAxis = new YAxis
-            {
-                Type = AxisType.Value,
-                BoundaryGap = new object[] {0, "30%"},
-            },
+                YAxis = new YAxis
+                {
+                    Type = AxisType.Value,
+                    BoundaryGap = new object[] { 0, "30%" },
+                },
 
-            VisualMap = new PiecewiseVisualMap
-            {
-                Show = false,
-                Dimension = 0,
-                SeriesIndex = 0,
-                Pieces = new JsonObject[]
+                VisualMap = new PiecewiseVisualMap
+                {
+                    Show = false,
+                    Dimension = 0,
+                    SeriesIndex = 0,
+                    Pieces = new JsonObject[]
                 {
                      "{gt:1, lt:3, color: 'rgba(0, 180, 0, 0.5)'}",
                      "{gt:5, lt:7, color: 'rgba(0, 180, 0, 0.5)'}"
                 },
-            },
-            Series = new Line[]
+                },
+                Series = new Line[]
             {
                 new Line
                 {
@@ -78,8 +77,9 @@
                     }
                 },
             },
-        };
-        StateHasChanged();
+            };
+            StateHasChanged();
+        }
     }
 }
 

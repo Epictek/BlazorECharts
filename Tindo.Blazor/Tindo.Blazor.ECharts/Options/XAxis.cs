@@ -16,5 +16,7 @@ namespace Tindo.Blazor.ECharts.Options
         private object BoundaryGapValue => this.BoundaryGap?.Value;
 
         public Array Data { get; set; }
+
+        public AxisTick AxisTick { get; set; }
     }
 }

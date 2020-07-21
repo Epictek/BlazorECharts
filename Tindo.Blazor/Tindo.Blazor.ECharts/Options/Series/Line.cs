@@ -5,11 +5,7 @@ namespace Tindo.Blazor.ECharts.Options.Series
 {
     public class Line : SeriesBase
     {
-        public string Type => nameof(Line).ToLower();
-
-        public string Name { get; set; }
-
-        public Array Data { get; set; }
+        public  override string Type => nameof(Line).ToLower();
 
         public AreaStyle AreaStyle { get; set; }
 

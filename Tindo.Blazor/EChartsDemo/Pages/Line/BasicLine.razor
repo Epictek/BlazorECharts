@@ -2,38 +2,39 @@
 
 <TindoECharts Style="@style" Option="@option"></TindoECharts>
 
-<button @onclick="Show">
-    Draw
-</button>
 
 @code {
     private string style = "width: 600px;height:400px;";
 
     private Option option;
 
-    private void Show()
+    protected override void OnAfterRender(bool firstRender)
     {
-        option = new Option
+        if(firstRender)
         {
-            XAxis = new[] {new XAxis
+            option = new Option
+            {
+                XAxis = new[] {new XAxis
             {
                 Type = AxisType.Category,
                 Data = new string[] { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" }
             } },
 
-            YAxis = new[] { new YAxis
+                YAxis = new[] { new YAxis
             {
                 Type = AxisType.Value,
             }},
-            Series = new Line[]
-            {
+                Series = new Line[]
+        {
                 new Line
                 {
                     Data = new int[] { 820, 932, 901, 934, 1290, 1330, 1320 }
                 }
-                }
+            }
 
-        };
-        StateHasChanged();
+            };
+            StateHasChanged();
+        }
+
     }
 }

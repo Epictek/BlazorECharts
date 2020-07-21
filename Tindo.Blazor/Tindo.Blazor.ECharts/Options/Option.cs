@@ -1,5 +1,5 @@
-﻿using System.Reflection;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using System;
 using Tindo.Blazor.ECharts.Options.Series;
 
 namespace Tindo.Blazor.ECharts.Options
@@ -14,6 +14,8 @@ namespace Tindo.Blazor.ECharts.Options
 
         public Grid Grid { get; set; }
 
+        public Array Color { get; set; } = new string[] { "#c23531", "#2f4554", "#61a0a8", "#d48265", "#91c7ae", "#749f83", "#ca8622", "#bda29a", "#6e7074", "#546570", "#c4ccd3" };
+
         [JsonIgnore]
         public UnionType<XAxis, XAxis[]>  XAxis { get; set; }
 
@@ -27,7 +29,6 @@ namespace Tindo.Blazor.ECharts.Options
         public object YAxisValue => YAxis?.Value;
 
         public SeriesBase[] Series { get; set; }
-
 
         public VisualMap VisualMap { get; set; }
     }
