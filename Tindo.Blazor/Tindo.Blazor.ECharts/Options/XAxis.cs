@@ -5,7 +5,7 @@ namespace Tindo.Blazor.ECharts.Options
 {
     public class XAxis
     {
-        public bool Show { get; set; } = true;
+        public bool? Show { get; set; } = true;
 
         public AxisType Type { get; set; } = AxisType.Category;
 

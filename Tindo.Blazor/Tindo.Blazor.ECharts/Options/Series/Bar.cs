@@ -15,5 +15,11 @@ namespace Tindo.Blazor.ECharts.Options.Series
 
         [JsonProperty("BarWidth")]
         private object BarWidthValue => BarWidth?.Value;
+
+        public Label Label { get; set; }
+
+        public string Stack { get; set; }
+
+        public string CoordinateSystem { get; set; } = "cartesian2d";
     }
 }

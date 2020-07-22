@@ -31,5 +31,11 @@ namespace Tindo.Blazor.ECharts.Options
         public SeriesBase[] Series { get; set; }
 
         public VisualMap VisualMap { get; set; }
+
+        public RadiusAxis RadiusAxis { get; set; }
+
+        public Polar Polar { get; set; }
+
+        public AngleAxis AngleAxis { get; set; }
     }
 }

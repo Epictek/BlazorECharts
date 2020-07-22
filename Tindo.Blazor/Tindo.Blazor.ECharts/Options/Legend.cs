@@ -7,5 +7,7 @@ namespace Tindo.Blazor.ECharts.Options
         public LegendType  Type { get; set; }
 
         public Array Data { get; set; }
+
+        public bool? Show { get; set; }
     }
 }

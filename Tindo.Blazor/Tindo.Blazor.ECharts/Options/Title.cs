@@ -6,5 +6,7 @@
 
         public string Text { get; set; }
 
+        public string Subtext { get; set; }
+
     }
 }
