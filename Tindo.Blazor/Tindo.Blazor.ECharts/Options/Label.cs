@@ -14,5 +14,11 @@ namespace Tindo.Blazor.ECharts.Options
 
         [JsonProperty("position")]
         private object PositionValue => Position?.Value;
+
+        public string FontFamily { get; set; } = "sans-serif";
+
+        public int FontSize { get; set; } = 12;
+
+        public FontWeight FontWeight { get; set; } = FontWeight.Normal;
     }
 }

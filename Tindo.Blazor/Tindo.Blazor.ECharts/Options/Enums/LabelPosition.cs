@@ -14,6 +14,9 @@
         InsideTopLeft,
         InsideBottomLeft,
         InsideTopRight,
-        InsideBottomRight
+        InsideBottomRight,
+        Outside,
+        Inner,
+        Center,
     }
 }

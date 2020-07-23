@@ -6,7 +6,7 @@ namespace Tindo.Blazor.ECharts
     {
         public object Value { get; private set; }
 
-        public UnionType(object value)
+        private UnionType(object value)
         {
             this.Value = value;
         }
@@ -20,7 +20,7 @@ namespace Tindo.Blazor.ECharts
     {
         public object Value { get; private set; }
 
-        public UnionType(object value)
+        private UnionType(object value)
         {
             this.Value = value;
         }
@@ -28,5 +28,7 @@ namespace Tindo.Blazor.ECharts
         static public implicit operator UnionType<T1, T2, T3>(T1 t1) => new UnionType<T1, T2, T3>(t1);
 
         static public implicit operator UnionType<T1, T2, T3>(T2 t2) => new UnionType<T1, T2, T3>(t2);
+        
+        static public implicit operator UnionType<T1, T2, T3>(T3 t3) => new UnionType<T1, T2, T3>(t3);
     }
 }

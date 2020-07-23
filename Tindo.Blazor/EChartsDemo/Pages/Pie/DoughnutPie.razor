@@ -1,0 +1,67 @@
+﻿@page "/doughnut-pie"
+<TindoECharts Style="@style" Option="@option"></TindoECharts>
+
+@code {
+    private string style = "width: 800px;height:400px;";
+
+    private Option option;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if(firstRender)
+        {
+            option = new Option
+            {
+                Tooltip = new Tooltip
+                {
+                    Trigger = Trigger.Item,
+                    Formatter = "{a} <br/>{b}: {c} ({d}%)",
+                },
+                Legend = new Legend
+                {
+                    Orient = Orient.Vertical,
+                    Left = 10,
+                    Data = new string[] { "直接访问", "邮件营销", "联盟广告", "视频广告", "搜索引擎" }
+                },
+                Series = new Pie[]
+                {
+                    new Pie
+                    {
+                        Name  ="访问来源",
+                        Radius = new string[]{ "50%", "70%" },
+                        AvoidLabelOverlap = false,
+                        Label = new Label
+                        {
+                            Show = false,
+                            Position = LabelPosition.Center,
+                        },
+                        Emphasis = new Emphasis
+                        {
+                            Label = new Label
+                            {
+                                Show = true,
+                                FontSize = 30,
+                                FontWeight = FontWeight.Bold,
+                            }
+                        },
+                        LabelLine = new LabelLine
+                        {
+                            Show = true,
+                        },
+                        Data = new JsonObject[]
+                        {
+                            "{\"value\": 335, \"name\":\"直接访问\"}",
+                             "{\"value\": 310, \"name\":\"邮件营销\"}",
+                              "{\"value\": 234, \"name\":\"联盟广告\"}",
+                               "{\"value\": 135, \"name\":\"视频广告\"}",
+                                "{\"value\": 1548, \"name\":\"搜索引擎\"}"
+                        }
+
+                    }
+                }
+            };
+            this.StateHasChanged();
+        }
+
+    }
+}

@@ -7,5 +7,7 @@
         public Trigger Trigger { get; set; } = Trigger.Item;
 
         public AxisPointer AxisPointer { get; set; }
+
+        public string Formatter { get; set; }
     }
 }

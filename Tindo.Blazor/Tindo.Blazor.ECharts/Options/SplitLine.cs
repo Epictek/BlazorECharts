@@ -1,4 +1,4 @@
-﻿namespace Tindo.Blazor.ECharts.Options.Enums
+﻿namespace Tindo.Blazor.ECharts.Options
 {
     public class SplitLine
     {
