@@ -4,8 +4,7 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public class MarkLineLabel
+    public class Toolbox
     {
-        public bool Show { get; set; }
     }
 }

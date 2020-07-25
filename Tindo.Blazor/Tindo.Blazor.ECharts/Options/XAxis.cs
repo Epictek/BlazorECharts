@@ -1,31 +1,10 @@
 ﻿using System;
-using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
     public class XAxis
     {
-        public bool? Show { get; set; } = true;
-
-        public AxisType Type { get; set; } = AxisType.Category;
-
-        [JsonIgnore]
-        public UnionType<bool, Array> BoundaryGap { get; set; }
-
-        [JsonProperty("boundaryGap")]
-        private object BoundaryGapValue => this.BoundaryGap?.Value;
-
-        public Array Data { get; set; }
-
-        public AxisTick AxisTick { get; set; }
-
-        public static XAxis Empty => new EmptyXAxis();
-
-    }
-
-    [JsonConverter(typeof(EmptyConverter))]
-    internal class EmptyXAxis : XAxis
-    {
-
     }
 }

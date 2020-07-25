@@ -4,11 +4,7 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public enum PieLabelPostion
+    public class DataZoom
     {
-        Outside,
-        Inside,
-        Inner,
-        Center
     }
 }

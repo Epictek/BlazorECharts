@@ -1,11 +1,10 @@
-﻿namespace Tindo.Blazor.ECharts.Options
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Tindo.Blazor.ECharts.Options
 {
-
-
     public class AxisPointer
     {
-        public AxisPointerType Type { get; set; }
-
-        public Label Label { get; set; }
     }
 }

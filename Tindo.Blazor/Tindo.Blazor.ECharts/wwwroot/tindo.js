@@ -1,29 +1,26 @@
 ﻿window.invokeECharts = {
-    init: function (id, opts = null, theme = 'light') {
-        chart = echarts.init(document.getElementById(id), theme)
-        if (opts) {
-            option = JSON.parse(opts);
-            chart.setOption(option);
+    charts: new Object(),
+    init: function (id, theme, opts) {
+        if (!!opts) {
+            opts = JSON.parse(opts);
         }
-        window.charts[id] = chart;
+        chart = echarts.init(document.getElementById(id), theme, opts);
+        invokeECharts.charts[id] = chart;
     },
-
+    setOption: function (id, option, notMerge, lazyUpdate) {
+        option = JSON.parse(option);
+        if (!(id in invokeECharts.charts)) {
+            return;
+        }
+        invokeECharts.charts[id].setOption(option, notMerge, lazyUpdate);
+    },
     remove: function (id) {
-        if (id in window.charts) {
-            var chart = window.charts[id];
-            chart.clear();
-            delete window.charts[id];
+        if (id in invokeECharts.charts) {
+            invokeECharts.charts[id].clear();
+            if (!invokeECharts.charts[id].isDisposed) {
+                invokeECharts.charts[id].dispose();
+            }
+            delete invokeECharts.charts[id];
         }
-    },
-
-    setup: function (id, opts, notMerge, lazyUpdate) {
-        if (!(id in window.charts)) {
-            invokeECharts.init(id);
-        }
-        option = JSON.parse(opts);
-        window.charts[id].hideLoading();
-        window.charts[id].setOption(option, notMerge, lazyUpdate);
     }
 };
-
-window.charts = {};

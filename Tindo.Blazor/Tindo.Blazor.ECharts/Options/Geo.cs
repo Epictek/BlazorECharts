@@ -4,10 +4,7 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public class Emphasis
+    public class Geo
     {
-        public Label Label { get; set; }
-
-        public ItemStyle ItemStyle { get; set; }
     }
 }

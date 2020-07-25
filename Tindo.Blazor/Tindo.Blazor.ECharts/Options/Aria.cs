@@ -4,8 +4,7 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public class RadarName
+    public class Aria
     {
-        public bool? Show { get; set; } = true;
     }
 }

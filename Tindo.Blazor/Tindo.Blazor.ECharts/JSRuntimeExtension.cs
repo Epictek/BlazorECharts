@@ -1,12 +1,17 @@
-﻿using System;
-using System.Threading.Tasks;
-using Microsoft.JSInterop;
+﻿using Microsoft.JSInterop;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using System;
+using System.Threading.Tasks;
+using Tindo.Blazor.ECharts.API;
+using Tindo.Blazor.ECharts.Options;
 
 namespace Tindo.Blazor.ECharts
 {
+    /// <summary>
+    /// JSRuntime extension for ECharts.
+    /// </summary>
     public static class JSRuntimeExtension
     {
         public static JsonSerializerSettings Settings = new JsonSerializerSettings
@@ -16,26 +21,24 @@ namespace Tindo.Blazor.ECharts
             Converters = { new StringEnumConverter(new CamelCaseNamingStrategy())}
         };
 
-        public static async Task InitChart(this IJSRuntime runtime, string id, object opts = null, string theme="light")
+        public static async Task InitChart(this IJSRuntime runtime, string id, string theme="light", Opts opts=null)
         {
             ValidateId(id);
-            await runtime.InvokeVoidAsync(
-                "invokeECharts.init", 
-                id, 
-                JsonConvert.SerializeObject(opts, Formatting.None, Settings), 
-                theme);
+            var serializedOpt = JsonConvert.SerializeObject(opts, Formatting.None, Settings);
+            await runtime.InvokeVoidAsync("invokeECharts.init", id, theme, serializedOpt);
+        }
+
+        public static async Task SetOpton(this IJSRuntime runtime, string id, Option option, bool notMerge=false, bool lazyUpdate=false)
+        {
+            ValidateId(id);
+            var serializedOption = JsonConvert.SerializeObject(option, Formatting.None, Settings);
+            await runtime.InvokeVoidAsync("invokeECharts.setOption", id, serializedOption, notMerge, lazyUpdate);
         }
 
         public static async Task RemoveChart(this IJSRuntime runtime, string id)
         {
             ValidateId(id);
             await runtime.InvokeVoidAsync("invokeECharts.remove", id);
-        }
-
-        public static async Task SetupChart(this IJSRuntime runtime, string id, object opts, bool? notMerge, bool? lazyUpdate)
-        {
-            ValidateId(id);
-            await runtime.InvokeVoidAsync("invokeECharts.setup", id, JsonConvert.SerializeObject(opts, Formatting.None, Settings), notMerge, lazyUpdate);
         }
 
         private static void ValidateId(string id)
