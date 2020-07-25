@@ -23,5 +23,7 @@ namespace Tindo.Blazor.ECharts.Options.Series
 
         public Emphasis Emphasis { get; set; }
 
+        public Array Center { get; set; }
+
     }
 }

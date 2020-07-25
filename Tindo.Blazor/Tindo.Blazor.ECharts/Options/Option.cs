@@ -8,6 +8,8 @@ namespace Tindo.Blazor.ECharts.Options
     {
         public Title Title { get; set; }
 
+        public string BackgroundColor { get; set; }
+
         public Tooltip Tooltip { get; set; }
 
         public Legend Legend { get; set; }
@@ -37,5 +39,7 @@ namespace Tindo.Blazor.ECharts.Options
         public Polar Polar { get; set; }
 
         public AngleAxis AngleAxis { get; set; }
+
+        public Radar Radar { get; set; }
     }
 }

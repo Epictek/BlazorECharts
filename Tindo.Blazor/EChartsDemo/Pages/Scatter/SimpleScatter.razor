@@ -1,0 +1,43 @@
+﻿@page "/simple-scatter"
+<TindoECharts Style="@style" Option="@option"></TindoECharts>
+
+@code {
+    private string style = "width: 800px;height:600px;";
+
+    private Option option;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if(firstRender)
+        {
+            option = new Option
+            {
+                XAxis = XAxis.Empty,
+                YAxis = YAxis.Empty,
+                Series = new Scatter[]
+                {
+                    new Scatter
+                    {
+                        Data = new double[][]
+                        {
+                            new double[]{10.0, 8.04},
+                            new double[]{8.0, 6.95},
+                            new double[]{13.0, 7.58},
+                            new double[]{9.0, 8.81},
+                            new double[]{11.0, 8.33},
+                            new double[]{14.0, 9.96},
+                            new double[]{6.0, 7.24},
+                            new double[]{4.0, 4.26},
+                            new double[]{12.0, 10.84},
+                            new double[]{7.0, 4.82},
+                            new double[]{5.0, 5.68},
+                        },
+                        SymbolSize = 20,
+                    }
+                }
+            };
+            this.StateHasChanged();
+        }
+    }
+
+}

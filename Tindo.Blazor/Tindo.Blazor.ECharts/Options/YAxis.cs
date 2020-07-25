@@ -18,5 +18,13 @@ namespace Tindo.Blazor.ECharts.Options
         public AxisTick AxisTick { get; set; }
 
         public Array Data { get; set; }
+
+        public static YAxis Empty => new EmptyYAxis();
+    }
+
+    [JsonConverter(typeof(EmptyConverter))]
+    internal class EmptyYAxis : YAxis
+    {
+
     }
 }

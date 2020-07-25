@@ -4,10 +4,8 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public class Emphasis
+    public class RadarName
     {
-        public Label Label { get; set; }
-
-        public ItemStyle ItemStyle { get; set; }
+        public bool? Show { get; set; } = true;
     }
 }

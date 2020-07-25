@@ -95,8 +95,47 @@
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="simple-pie">
+                            <span class="oi oi-pie-chart" aria-hidden="true"></span> Simple Pie
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
                         <NavLink class="nav-link" href="doughnut-pie">
                             <span class="oi oi-pie-chart" aria-hidden="true"></span> Doughnut Pie
+                        </NavLink>
+                    </li>
+
+                </ul>
+            }
+
+        </li>
+
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" @onclick="()=> expandScatter =!expandScatter ">
+                <span class="oi oi-plus" aria-hidden="true"></span> Scatter
+            </NavLink>
+            @if (expandScatter)
+            {
+                <ul class="nav flex-column">
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="simple-scatter">
+                            <span class="oi oi-share-boxed" aria-hidden="true"></span> Simple Scatter
+                        </NavLink>
+                    </li>
+                </ul>
+            }
+
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" @onclick="()=> expandRadar =!expandRadar ">
+                <span class="oi oi-plus" aria-hidden="true"></span> Radar
+            </NavLink>
+            @if (expandRadar)
+            {
+                <ul class="nav flex-column">
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="simple-radar">
+                            <span class="oi oi-rss-alt" aria-hidden="true"></span> Simple Radar
                         </NavLink>
                     </li>
                 </ul>
@@ -113,4 +152,8 @@
     private bool expandBar;
 
     private bool expandPie;
+
+    private bool expandScatter;
+
+    private bool expandRadar;
 }
