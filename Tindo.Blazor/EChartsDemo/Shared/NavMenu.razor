@@ -11,136 +11,26 @@
         </li>
         <li class="nav-item px-3">
             <NavLink class="nav-link" @onclick="()=> expandLine=!expandLine ">
-                <span class="oi oi-plus" aria-hidden="true"></span> Line
+                @if (expandLine)
+                {
+                    <span class="oi oi-minus" aria-hidden="true"></span>
+                }
+                else
+                {
+                    <span class="oi oi-plus" aria-hidden="true"></span>
+                }
+                Line
             </NavLink>
             @if (expandLine)
             {
                 <ul class="nav flex-column">
                     <li class="nav-item px-3">
                         <NavLink class="nav-link" href="basic-line">
-                            <span class="oi oi-bar-chart" aria-hidden="true"></span> Basic Line
-                        </NavLink>
-                    </li>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="basic-area">
-                            <span class="oi oi-bar-chart" aria-hidden="true"></span> Basic Area
-                        </NavLink>
-                    </li>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="smoothed-line">
-                            <span class="oi oi-bar-chart" aria-hidden="true"></span> Smoothed Line
-                        </NavLink>
-                    </li>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="stack-area">
-                            <span class="oi oi-bar-chart" aria-hidden="true"></span> Stacked Area
-                        </NavLink>
-                    </li>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="area-piece">
-                            <span class="oi oi-bar-chart" aria-hidden="true"></span> Area Piece
+                            <span class="oi oi-signal" aria-hidden="true"></span> Basic Line
                         </NavLink>
                     </li>
                 </ul>
             }
-        </li>
-
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" @onclick="()=> expandBar =!expandBar ">
-                <span class="oi oi-plus" aria-hidden="true"></span> Bar
-            </NavLink>
-            @if (expandBar)
-            {
-                <ul class="nav flex-column">
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="simple-bar">
-                            <span class="oi oi-bar-chart" aria-hidden="true"></span> Simple Bar
-                        </NavLink>
-                    </li>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="background-bar">
-                            <span class="oi oi-bar-chart" aria-hidden="true"></span> Background Bar
-                        </NavLink>
-                    </li>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="axis-align-bar">
-                            <span class="oi oi-bar-chart" aria-hidden="true"></span> Axis Align Bar
-                        </NavLink>
-                    </li>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="positvie-negative-bar">
-                            <span class="oi oi-bar-chart" aria-hidden="true"></span> Pos-Neg Bar
-                        </NavLink>
-                    </li>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="polar-stack-bar">
-                            <span class="oi oi-bar-chart" aria-hidden="true"></span> Polar Stack Bar
-                        </NavLink>
-                    </li>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="vertical-bar">
-                            <span class="oi oi-bar-chart" aria-hidden="true"></span> Vertical Bar
-                        </NavLink>
-                    </li>
-                </ul>
-            }
-
-        </li>
-
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" @onclick="()=> expandPie =!expandPie ">
-                <span class="oi oi-plus" aria-hidden="true"></span> Pie
-            </NavLink>
-            @if (expandPie)
-            {
-                <ul class="nav flex-column">
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="simple-pie">
-                            <span class="oi oi-pie-chart" aria-hidden="true"></span> Simple Pie
-                        </NavLink>
-                    </li>
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="doughnut-pie">
-                            <span class="oi oi-pie-chart" aria-hidden="true"></span> Doughnut Pie
-                        </NavLink>
-                    </li>
-
-                </ul>
-            }
-
-        </li>
-
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" @onclick="()=> expandScatter =!expandScatter ">
-                <span class="oi oi-plus" aria-hidden="true"></span> Scatter
-            </NavLink>
-            @if (expandScatter)
-            {
-                <ul class="nav flex-column">
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="simple-scatter">
-                            <span class="oi oi-share-boxed" aria-hidden="true"></span> Simple Scatter
-                        </NavLink>
-                    </li>
-                </ul>
-            }
-
-        </li>
-        <li class="nav-item px-3">
-            <NavLink class="nav-link" @onclick="()=> expandRadar =!expandRadar ">
-                <span class="oi oi-plus" aria-hidden="true"></span> Radar
-            </NavLink>
-            @if (expandRadar)
-            {
-                <ul class="nav flex-column">
-                    <li class="nav-item px-3">
-                        <NavLink class="nav-link" href="simple-radar">
-                            <span class="oi oi-rss-alt" aria-hidden="true"></span> Simple Radar
-                        </NavLink>
-                    </li>
-                </ul>
-            }
-
         </li>
     </ul>
 </div>

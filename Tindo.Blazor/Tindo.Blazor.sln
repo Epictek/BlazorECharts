@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EChartsDemo", "EChartsDemo\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{49311536-4DDF-4232-9B47-B6C2026D84BC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tindo.Blazor.ECharts.Test", "Tindo.Blazor.ECharts.Test\Tindo.Blazor.ECharts.Test.csproj", "{A1595724-F87F-4AF0-A81A-D400767956D0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E05F4DB1-6848-4ED9-94AD-3AD3486E3A6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E05F4DB1-6848-4ED9-94AD-3AD3486E3A6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E05F4DB1-6848-4ED9-94AD-3AD3486E3A6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1595724-F87F-4AF0-A81A-D400767956D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1595724-F87F-4AF0-A81A-D400767956D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1595724-F87F-4AF0-A81A-D400767956D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1595724-F87F-4AF0-A81A-D400767956D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -34,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{9A292872-0AB8-4A90-A902-8564C576E707} = {69C73E72-D72D-47EA-B627-8316046F5491}
 		{E05F4DB1-6848-4ED9-94AD-3AD3486E3A6C} = {89FDF846-3FC3-4217-BE4B-20F67C7515AF}
+		{A1595724-F87F-4AF0-A81A-D400767956D0} = {49311536-4DDF-4232-9B47-B6C2026D84BC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {086FEC32-89BA-4B45-BC62-E086020E1D61}

@@ -14,7 +14,7 @@ namespace Tindo.Blazor.ECharts
     /// </summary>
     public static class JSRuntimeExtension
     {
-        public static JsonSerializerSettings Settings = new JsonSerializerSettings
+        private static JsonSerializerSettings Settings = new JsonSerializerSettings
         {
             NullValueHandling = NullValueHandling.Ignore,
             ContractResolver = new CamelCasePropertyNamesContractResolver(),
