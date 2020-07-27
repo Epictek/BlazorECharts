@@ -1,4 +1,4 @@
-﻿namespace Tindo.Blazor.ECharts.Options.Enum
+﻿namespace Tindo.Blazor.ECharts.Options
 {
     public enum VerticalAlign
     {

@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public class Tooltip
+    public class MarkLineStyle : LineStyle
     {
-       
+        public double? Curveness { get; set; }
 
     }
 }

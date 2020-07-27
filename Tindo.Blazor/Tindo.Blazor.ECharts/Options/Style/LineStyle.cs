@@ -4,11 +4,11 @@
     {
         public Color Color { get; set; } = "#333";
 
-        public double Width { get; set; } = 1;
+        public double? Width { get; set; }
 
-        public LineStyleType Type { get; set; }
+        public LineStyleType? Type { get; set; }
 
-        public double ShadowBlur { get; set; }
+        public double? ShadowBlur { get; set; }
 
         public Color ShadowColor { get; set; }
 

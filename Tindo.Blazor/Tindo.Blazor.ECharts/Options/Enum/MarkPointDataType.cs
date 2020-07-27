@@ -4,9 +4,10 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public class Tooltip
+    public enum MarkPointDataType
     {
-       
-
+        Min,
+        Max,
+        Average,
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace Tindo.Blazor.ECharts.Options
+﻿using Tindo.Blazor.ECharts.Options.SubOptions;
+
+namespace Tindo.Blazor.ECharts.Options
 {
     public abstract class AxisBase
     {
@@ -45,5 +47,27 @@
         public bool Silent { get; set; } = false;
 
         public bool TriggerEvent { get; set; } = false;
+
+        public AxisLine AxisLine { get; set; }
+
+        public AxisTick AxisTick { get; set; }
+
+        public MinorTick MinorTick { get; set; }
+
+        public AxisLabel AxisLabel { get; set; }
+
+        public SplitLine SplitLine { get; set; }
+
+        public MinorSplitLine MinorSplitLine { get; set; }
+
+        public SplitArea SplitArea { get; set; }
+
+        public AxisPointer AxisPointer { get; set; }
+
+        public int Zlevel { get; set; }
+
+        public int Z { get; set; }
+
+        public AxisData[] Data { get; set; }
     }
 }

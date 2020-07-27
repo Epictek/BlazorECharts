@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public class Tooltip
+    public class SeriesAreaStyle : AreaStyle
     {
-       
-
+        public Color Color { get; set; } 
     }
 }
