@@ -1,7 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
@@ -27,7 +24,6 @@ namespace Tindo.Blazor.ECharts.Options
         public string  Name { get; set; }
 
         public double? X { get; set; }
-
 
         public double? Y { get; set; }
 

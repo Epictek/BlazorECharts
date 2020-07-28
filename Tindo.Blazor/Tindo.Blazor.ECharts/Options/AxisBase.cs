@@ -4,27 +4,27 @@ namespace Tindo.Blazor.ECharts.Options
 {
     public abstract class AxisBase
     {
-        public bool Show { get; set; } = true;
+        public bool? Show { get; set; } 
 
-        public int GridIndex { get; set; } = 0;
+        public int? GridIndex { get; set; } 
 
-        public abstract AxisPosition Postion { get; set; }
+        public abstract AxisPosition? Postion { get; set; }
 
-        public int Offset { get; set; } = 0;
+        public int? Offset { get; set; } 
 
-        public abstract AxisType Type { get; set; }
+        public abstract AxisType? Type { get; set; }
 
         public string Name { get; set; }
 
-        public AxisNameLocation NameLocation { get; set; } = AxisNameLocation.End;
+        public AxisNameLocation? NameLocation { get; set; }
 
         public NameTextStyle NameTextStyle { get; set; }
 
-        public double NameGap { get; set; } = 15;
+        public double? NameGap { get; set; }
 
         public double? NameRotate { get; set; }
 
-        public bool Inverse { get; set; } = false;
+        public bool? Inverse { get; set; } = false;
 
         public UnionType<bool, double[], string[]> BoundaryGap { get; set; }
 
@@ -32,11 +32,11 @@ namespace Tindo.Blazor.ECharts.Options
 
         public UnionType<string, double> Max { get; set; }
 
-        public bool Scale { get; set; } = false;
+        public bool? Scale { get; set; } = false;
 
-        public int SplitNumber { get; set; } = 5;
+        public int? SplitNumber { get; set; } 
 
-        public int MinInterval { get; set; } = 0;
+        public int? MinInterval { get; set; } 
 
         public int? MaxInterval { get; set; }
 
@@ -44,9 +44,9 @@ namespace Tindo.Blazor.ECharts.Options
 
         public double? LogBase { get; set; } = 10;
 
-        public bool Silent { get; set; } = false;
+        public bool? Silent { get; set; } = false;
 
-        public bool TriggerEvent { get; set; } = false;
+        public bool? TriggerEvent { get; set; } = false;
 
         public AxisLine AxisLine { get; set; }
 
@@ -64,9 +64,9 @@ namespace Tindo.Blazor.ECharts.Options
 
         public AxisPointer AxisPointer { get; set; }
 
-        public int Zlevel { get; set; }
+        public int? Zlevel { get; set; }
 
-        public int Z { get; set; }
+        public int? Z { get; set; }
 
         public AxisData[] Data { get; set; }
     }

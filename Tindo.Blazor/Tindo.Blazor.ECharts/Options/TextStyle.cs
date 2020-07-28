@@ -2,15 +2,15 @@
 {
     public class TextStyle
     {
-        public Color Color { get; set; } = "#fff";
+        public Color Color { get; set; } 
 
-        public FontStyle FontStyle { get; set; } = FontStyle.Normal;
+        public FontStyle? FontStyle { get; set; }
 
-        public UnionType<int, FontWeight> FontWeight { get; set; } = Options.FontWeight.Normal;
+        public UnionType<int, FontWeight> FontWeight { get; set; } 
 
         public string FontFamily { get; set; }
 
-        public double FontSize { get; set; } = 12;
+        public double? FontSize { get; set; } 
 
         public double? LineHeight { get; set; }
 
@@ -18,13 +18,13 @@
 
         public UnionType<string, double> Height { get; set; }
 
-        public Color TextBorderColor { get; set; } = System.Drawing.Color.Transparent;
+        public Color TextBorderColor { get; set; }
 
-        public double TextBorderWidth { get; set; } = 0.0;
+        public double? TextBorderWidth { get; set; } 
 
-        public Color TextShadowColor { get; set; } = System.Drawing.Color.Transparent;
+        public Color TextShadowColor { get; set; } 
 
-        public double? TextShadowBlur { get; set; } = 0.0;
+        public double? TextShadowBlur { get; set; } 
 
         public double? TextShadowOffsetX { get; set; }
 

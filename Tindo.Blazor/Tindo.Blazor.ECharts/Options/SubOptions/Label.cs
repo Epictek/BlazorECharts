@@ -8,7 +8,7 @@ namespace Tindo.Blazor.ECharts.Options
 
         public LabelPosition Position { get; set; }
 
-        public double? Distance { get; set; } = 5.0;
+        public double? Distance { get; set; } 
 
         public double? Rotate { get; set; }
 
@@ -16,39 +16,39 @@ namespace Tindo.Blazor.ECharts.Options
 
         public string Formatter { get; set; }
 
-        public Color Color { get; set; } = "#fff";
+        public Color Color { get; set; }
 
-        public FontStyle FontStyle { get; set; } = FontStyle.Normal;
+        public FontStyle? FontStyle { get; set; } 
 
-        public FontWeight FontWeight { get; set; } = FontWeight.Normal;
+        public FontWeight? FontWeight { get; set; } 
 
-        public string FontFamily { get; set; } = "sans-serif";
+        public string FontFamily { get; set; }
 
-        public int FontSize { get; set; } = 12;
+        public int? FontSize { get; set; } 
 
-        public Align Align { get; set; } = Align.Automatic;
+        public Align? Align { get; set; } 
 
-        public VerticalAlign VerticalAlign { get; set; } = VerticalAlign.Automatic;
+        public VerticalAlign? VerticalAlign { get; set; } 
 
         public double? LineHeight { get; set; }
 
-        public Color BackgroundColor { get; set; } = System.Drawing.Color.Transparent;
+        public Color BackgroundColor { get; set; } 
 
-        public Color BorderColor { get; set; } = System.Drawing.Color.Transparent;
+        public Color BorderColor { get; set; }
 
         public double? BorderWidth { get; set; }
 
-        public UnionType<double, double[]> BorderRadius { get; set; } = 0;
+        public UnionType<double, double[]> BorderRadius { get; set; } 
 
-        public UnionType<double, double[]> Padding { get; set; } = 0;
+        public UnionType<double, double[]> Padding { get; set; }
 
-        public Color ShadowColor { get; set; } = System.Drawing.Color.Transparent;
+        public Color ShadowColor { get; set; } 
 
-        public double ShadowBlur { get; set; } = 0;
+        public double? ShadowBlur { get; set; } 
 
-        public double ShadowOffsetX { get; set; } = 0;
+        public double? ShadowOffsetX { get; set; } 
 
-        public double ShadowOffsetY { get; set; } = 0;
+        public double? ShadowOffsetY { get; set; }
 
         public JsonObject Rich { get; set; }
     }

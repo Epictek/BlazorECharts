@@ -2,7 +2,7 @@
 {
     public class XAxis : AxisBase
     {
-        public override AxisPosition Postion { get; set; } = AxisPosition.Bottom;
-        public override AxisType Type { get; set; } = AxisType.Category;
+        public override AxisPosition? Postion { get; set; } 
+        public override AxisType? Type { get; set; } 
     }
 }

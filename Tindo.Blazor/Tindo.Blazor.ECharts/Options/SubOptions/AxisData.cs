@@ -1,6 +1,6 @@
 ﻿namespace Tindo.Blazor.ECharts.Options
 {
-    class AxisData
+    public class AxisData
     {
         public string Value { get; set; }
 

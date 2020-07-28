@@ -1,6 +1,4 @@
-﻿using Newtonsoft.Json;
-
-namespace Tindo.Blazor.ECharts.API
+﻿namespace Tindo.Blazor.ECharts.API
 {
     /// <summary>
     /// ECharts init function's opt parameter
@@ -22,20 +20,12 @@ namespace Tindo.Blazor.ECharts.API
         /// <summary>
         /// Specify width explicitly, in pixel. If setting to null/undefined/'auto', width of dom (instance container) will be used.
         /// </summary>
-        [JsonIgnore]
         public UnionType<string, double> Width { get; set; }
-
-        [JsonProperty("Width")]
-        private object WidthValue => Width?.Value;
 
         /// <summary>
         /// Specify height explicitly, in pixel. If setting to null/undefined/'auto', height of dom (instance container) will be used.
         /// </summary>
-        [JsonIgnore]
         public UnionType<string, double> Height { get; set; }
-
-        [JsonProperty("Height")]
-        private object HeightValue => Height?.Value;
 
     }
 }

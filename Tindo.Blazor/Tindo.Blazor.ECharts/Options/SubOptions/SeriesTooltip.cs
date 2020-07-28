@@ -10,7 +10,7 @@
 
         public Color BorderColor { get; set; }
 
-        public double BorderWidth { get; set; }
+        public double? BorderWidth { get; set; }
 
         public UnionType<double, double[]> Padding { get; set; }
 

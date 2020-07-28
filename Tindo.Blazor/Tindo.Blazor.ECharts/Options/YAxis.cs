@@ -2,7 +2,7 @@
 {
     public class YAxis : AxisBase
     {
-        public override AxisPosition Postion { get; set; } = AxisPosition.Left;
-        public override AxisType Type { get; set; } = AxisType.Value;
+        public override AxisPosition? Postion { get; set; } 
+        public override AxisType? Type { get; set; } 
     }
 }

@@ -2,9 +2,9 @@
 {
     public class AxisDataTextStyle : TextStyle
     {
-        public Color BackgroundColor { get; set; } = System.Drawing.Color.Transparent;
+        public Color BackgroundColor { get; set; } 
 
-        public Color BorderColor { get; set; } = System.Drawing.Color.Transparent;
+        public Color BorderColor { get; set; } 
 
         public double? BorderWidth { get; set; }
 
@@ -12,7 +12,7 @@
 
         public UnionType<double, double[]> Padding { get; set; }
 
-        public Color ShadowColor { get; set; } = System.Drawing.Color.Transparent;
+        public Color ShadowColor { get; set; }
 
         public double ShadowBlur { get; set; }
 

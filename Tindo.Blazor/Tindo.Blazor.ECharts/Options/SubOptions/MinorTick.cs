@@ -2,11 +2,11 @@
 {
     public class MinorTick
     {
-        public bool Show { get; set; } = false;
+        public bool? Show { get; set; }
 
-        public int SplitNumber { get; set; } = 5;
+        public int? SplitNumber { get; set; } 
 
-        public double Length { get; set; } = 3;
+        public double? Length { get; set; } 
 
         public LineStyle LineStyle { get; set; }
     }

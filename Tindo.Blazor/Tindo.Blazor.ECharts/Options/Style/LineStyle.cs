@@ -2,7 +2,7 @@
 {
     public class LineStyle
     {
-        public Color Color { get; set; } = "#333";
+        public Color Color { get; set; } 
 
         public double? Width { get; set; }
 

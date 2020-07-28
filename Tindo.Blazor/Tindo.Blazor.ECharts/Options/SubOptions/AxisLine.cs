@@ -2,9 +2,9 @@
 {
     public class AxisLine
     {
-        public bool Show { get; set; } = true;
+        public bool? Show { get; set; } 
 
-        public bool OnZero { get; set; } = true;
+        public bool? OnZero { get; set; } 
 
         public double? OnZeroAxisIndex { get; set; }
 

@@ -6,11 +6,11 @@
 
         public Color ShadowColor { get; set; }
 
-        public double ShadowOffsetX { get; set; } = 0.0;
+        public double? ShadowOffsetX { get; set; } 
 
-        public double ShadowOffsetY { get; set; } = 0.0;
+        public double? ShadowOffsetY { get; set; } 
 
-        public double Opacity { get; set; } = 1;
+        public double? Opacity { get; set; } 
 
     }
 }

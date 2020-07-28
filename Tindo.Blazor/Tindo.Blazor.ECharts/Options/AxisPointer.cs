@@ -6,7 +6,7 @@ namespace Tindo.Blazor.ECharts.Options
 {
     public class AxisPointer
     {
-        public bool Show { get; set; } = false;
+        public bool? Show { get; set; }
 
         public AxisPointerType Type { get; set; }
 

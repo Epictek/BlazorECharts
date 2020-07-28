@@ -11,7 +11,7 @@ namespace Tindo.Blazor.ECharts.Options
 
         public UnionType<double, double[]> SymbolSize { get; set; }
 
-        public double SymbolRotate { get; set; }
+        public double? SymbolRotate { get; set; }
 
         public bool? SymbolKeepAspect { get; set; }
 

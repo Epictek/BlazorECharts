@@ -8,7 +8,7 @@
 
         public double Size { get; set; }
 
-        public Color Color { get; set; } = "#333";
+        public Color Color { get; set; }
 
         public double? Margin { get; set; }
 
@@ -18,9 +18,9 @@
 
         public Color ShadowColor { get; set; }
 
-        public double ShadowOffsetX { get; set; }
+        public double? ShadowOffsetX { get; set; }
 
-        public double ShadowOffsetY { get; set; }
+        public double? ShadowOffsetY { get; set; }
 
 
     }

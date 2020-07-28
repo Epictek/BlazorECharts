@@ -4,7 +4,7 @@
     {
         public Color Color { get; set; } = "rgba(150,150,150,0.3)";
 
-        public double ShadowBlur { get; set; }
+        public double? ShadowBlur { get; set; }
 
         public Color ShadowColor { get; set; }
 

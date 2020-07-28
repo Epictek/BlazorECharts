@@ -4,6 +4,9 @@
         if (!!opts) {
             opts = JSON.parse(opts);
         }
+        if (id in invokeECharts.charts) {
+            return;
+        }
         chart = echarts.init(document.getElementById(id), theme, opts);
         invokeECharts.charts[id] = chart;
     },
@@ -22,5 +25,6 @@
             }
             delete invokeECharts.charts[id];
         }
-    }
+    },
+
 };
