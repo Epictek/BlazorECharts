@@ -4,11 +4,10 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public enum AxisPointerType
+    public enum LegendSelectorPosition
     {
-        Cross,
-        Line,
-        Shadow,
-        None
+        End,
+
+        Start
     }
 }

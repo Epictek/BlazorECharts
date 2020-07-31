@@ -4,11 +4,12 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public enum AxisPointerType
+    public enum TooltipPosition
     {
-        Cross,
-        Line,
-        Shadow,
-        None
+        Inside,
+        Top,
+        Left,
+        Right,
+        Bottom,
     }
 }

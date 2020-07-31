@@ -4,11 +4,9 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public enum AxisPointerType
+    public enum PageButtonPosition
     {
-        Cross,
-        Line,
-        Shadow,
-        None
+        Start,
+        End
     }
 }

@@ -1,5 +1,4 @@
-﻿
-<div id="@Id" class="@Class" style="@Style"></div>
+﻿<div id="@Id" class="@Class" style="@Style"></div>
 
 @code {
     private string id = "echart-" + DateTime.Now.Ticks;
@@ -36,11 +35,15 @@
         if (string.IsNullOrWhiteSpace(Id))
         {
             Id = id;
+
         }
-        await JSRuntime.InitChart(Id, Theme, Opts);
-        if(Option!=null)
+        if (await JSRuntime.Exist(Id))
         {
-            await JSRuntime.SetOpton(Id, Option, NotMerge, LazyUpdate);
+            await JSRuntime.InitChart(Id, Theme, Opts);
+            if (Option != null)
+            {
+                await JSRuntime.SetOpton(Id, Option, NotMerge, LazyUpdate);
+            }
         }
     }
 }

@@ -10,6 +10,7 @@
         chart = echarts.init(document.getElementById(id), theme, opts);
         invokeECharts.charts[id] = chart;
     },
+
     setOption: function (id, option, notMerge, lazyUpdate) {
         option = JSON.parse(option);
         if (!(id in invokeECharts.charts)) {
@@ -17,6 +18,7 @@
         }
         invokeECharts.charts[id].setOption(option, notMerge, lazyUpdate);
     },
+
     remove: function (id) {
         if (id in invokeECharts.charts) {
             invokeECharts.charts[id].clear();
@@ -26,5 +28,14 @@
             delete invokeECharts.charts[id];
         }
     },
+
+    exist: function (id) {
+        if (!!document.getElementById(id)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 
 };

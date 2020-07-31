@@ -41,6 +41,13 @@ namespace Tindo.Blazor.ECharts
             await runtime.InvokeVoidAsync("invokeECharts.remove", id);
         }
 
+        public static async ValueTask<bool> Exist(this IJSRuntime runtime, string id)
+        {
+            ValidateId(id);
+            var exist = await runtime.InvokeAsync<bool>("invokeECharts.exist", id);
+            return exist;
+        }
+
         private static void ValidateId(string id)
         {
             if (string.IsNullOrWhiteSpace(id))

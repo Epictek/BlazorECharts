@@ -4,11 +4,9 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public enum AxisPointerType
+    public enum TooltipRenderMode
     {
-        Cross,
-        Line,
-        Shadow,
-        None
+        Html,
+        richText
     }
 }

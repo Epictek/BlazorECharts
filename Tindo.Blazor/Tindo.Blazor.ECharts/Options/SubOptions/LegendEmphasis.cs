@@ -4,11 +4,8 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public enum AxisPointerType
+    public class LegendEmphasis
     {
-        Cross,
-        Line,
-        Shadow,
-        None
+        public SelectorLabel SelectorLabel { get; set; }
     }
 }
