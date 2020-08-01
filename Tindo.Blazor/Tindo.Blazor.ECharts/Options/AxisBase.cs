@@ -26,7 +26,7 @@ namespace Tindo.Blazor.ECharts.Options
 
         public bool? Inverse { get; set; } = false;
 
-        public UnionType<bool, double[], string[]> BoundaryGap { get; set; }
+        public UnionType<bool, double[], string[], object[]> BoundaryGap { get; set; }
 
         public UnionType<string, double> Min { get; set; }
 

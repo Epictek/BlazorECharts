@@ -52,7 +52,7 @@
 
         public Emphasis Emphasis { get; set; }
 
-        public bool? Smooth { get; set; }
+        public UnionType<bool, double> Smooth { get; set; }
 
         public string SmoothMonotone { get; set; }
 

@@ -2,7 +2,28 @@
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public class MarkLineData
+    public abstract class MarkLineData
+    {
+        public MarkLineDataSymbol Symbol { get; set; }
+
+        public UnionType<double, double[]> SymbolSize { get; set; }
+
+        public double? SymbolRotate { get; set; }
+
+        public bool? SymbolKeepAspect { get; set; }
+
+        public object[] SymbolOffset { get; set; }
+
+        public LineStyle LineStyle { get; set; }
+
+        public Label Label { get; set; }
+
+        public Emphasis Emphasis { get; set; }
+    }
+
+
+
+    /*public class MarkLineData
     {
         [JsonProperty("0")]
         public MarkLineDataDetial Zero { get; set; }
@@ -44,5 +65,5 @@ namespace Tindo.Blazor.ECharts.Options
         public Label Label { get; set; }
 
         public Emphasis Emphasis { get; set; }
-    }
+    }*/
 }

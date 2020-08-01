@@ -3,5 +3,6 @@
     public class Line : SeriesBase
     {
         public override string Type => nameof(Line).ToLower();
+
     }
 }

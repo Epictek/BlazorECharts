@@ -37,6 +37,23 @@ namespace Tindo.Blazor.ECharts
         static public implicit operator UnionType<T1, T2, T3>(T3 t3) => new UnionType<T1, T2, T3>(t3);
     }
 
+
+    [JsonConverter(typeof(UnionTypeConveter))]
+    public class UnionType<T1, T2, T3, T4> : UnionType
+    {
+        private UnionType(object value) : base(value)
+        {
+        }
+        static public implicit operator UnionType<T1, T2, T3, T4>(T1 t1) => new UnionType<T1, T2, T3, T4>(t1);
+
+        static public implicit operator UnionType<T1, T2, T3, T4>(T2 t2) => new UnionType<T1, T2, T3, T4>(t2);
+
+        static public implicit operator UnionType<T1, T2, T3, T4>(T3 t3) => new UnionType<T1, T2, T3, T4>(t3);
+
+        static public implicit operator UnionType<T1, T2, T3, T4>(T4 t4) => new UnionType<T1, T2, T3, T4>(t4);
+    }
+
+
     internal class UnionTypeConveter : JsonConverter
     {
         public override bool CanConvert(Type objectType)

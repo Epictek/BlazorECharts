@@ -4,9 +4,11 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public class MinorSplitLine
+    public class DataBackground
     {
-        public bool? Show { get; set; }
         public LineStyle LineStyle { get; set; }
+
+        public DataBackgroundAreaStyle AreaStyle { get; set; }
+
     }
 }

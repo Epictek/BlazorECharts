@@ -4,11 +4,7 @@ namespace Tindo.Blazor.ECharts.Options
 {
     public class MarkAreaData
     {
-        [JsonProperty("0")]
-        public MarkLineDataDetial Zero { get; set; }
 
-        [JsonProperty("1")]
-        public MarkLineDataDetial One { get; set; }
     }
 
     public class MarkAreaDataDetail

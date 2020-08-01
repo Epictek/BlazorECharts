@@ -1,6 +1,6 @@
 ﻿namespace Tindo.Blazor.ECharts.Options
 {
-    public enum LegendOrient
+    public enum Orient
     {
         Horizontal,
 

@@ -1,6 +1,6 @@
 ﻿namespace Tindo.Blazor.ECharts.Options
 {
-    public enum LegendSelectedMode
+    public enum SelectedMode
     {
         Single,
         Multiple

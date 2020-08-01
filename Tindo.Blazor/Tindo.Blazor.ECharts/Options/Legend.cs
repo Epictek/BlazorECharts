@@ -27,7 +27,7 @@ namespace Tindo.Blazor.ECharts.Options
 
         public UnionType<double, string> Height { get; set; }
 
-        public LegendOrient? Orient { get; set; }
+        public Orient? Orient { get; set; }
 
         public Align? Align { get; set; }
 
@@ -43,7 +43,7 @@ namespace Tindo.Blazor.ECharts.Options
 
         public string Formatter { get; set; }
 
-        public LegendSelectedMode? SelectedMode { get; set; }
+        public SelectedMode? SelectedMode { get; set; }
 
         public Color InactiveColor { get; set; }
 

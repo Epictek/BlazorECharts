@@ -4,7 +4,7 @@
     {
         public string Name { get; set; }
 
-        public double? Value { get; set; }
+        public UnionType<double, double[]> Value { get; set; }
 
         public SeriesSymbol? Symbol { get; set; }
 

@@ -4,9 +4,12 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options
 {
-    public class MinorSplitLine
+    public enum VisualMapAlign
     {
-        public bool? Show { get; set; }
-        public LineStyle LineStyle { get; set; }
+        Auto,
+        Left,
+        Right,
+        Top,
+        Bottom,
     }
 }
