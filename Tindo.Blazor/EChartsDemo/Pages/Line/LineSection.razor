@@ -1,0 +1,107 @@
+﻿@page "/line-sections"
+
+<TindoECharts Style="@style" Option="@option"></TindoECharts>
+
+@code {
+    private string style = "width: 600px;height:400px;";
+
+    private Option option;
+
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            option = new Option
+            {
+                Title = new Title
+                {
+                    Text = "一天用电量分布",
+                    Subtext = "纯属虚构",
+                },
+                Tooltip = new Tooltip
+                {
+                    Trigger = TooltipTrigger.Axis,
+                    AxisPointer = new AxisPointer
+                    {
+                        Type = AxisPointerType.Cross,
+                    }
+                },
+                XAxis = new XAxis
+                {
+                    Type = AxisType.Category,
+                    BoundaryGap = false,
+                    Data = new AxisData[]
+                    {
+                        new AxisData{Value="00:00"},
+                        new AxisData{Value="01:15"},
+                        new AxisData{Value="02:30"},
+                        new AxisData{Value="03:45"},
+                        new AxisData{Value="05:00"},
+                        new AxisData{Value="06:15"},
+                        new AxisData{Value="07:30"},
+                        new AxisData{Value="08:45"},
+                        new AxisData{Value="10:00"},
+                        new AxisData{Value="11:15"},
+                        new AxisData{Value="12:30"},
+                        new AxisData{Value="13:45"},
+                        new AxisData{Value="15:00"},
+                        new AxisData{Value="16:15"},
+                        new AxisData{Value="17:30"},
+                        new AxisData{Value="18:45"},
+                        new AxisData{Value="20:00"},
+                        new AxisData{Value="21:15"},
+                        new AxisData{Value="22:30"},
+                        new AxisData{Value="23:45"},
+                    }
+                },
+                YAxis = new YAxis
+                {
+                    Type = AxisType.Value,
+                    AxisLabel = new AxisLabel
+                    {
+                        Formatter = "{value} W"
+                    },
+                    AxisPointer = new AxisPointer
+                    {
+                        Snap = true,
+                    }
+                },
+                VisualMap = new PiecewiseVisualMap[]
+                {
+                    new PiecewiseVisualMap
+                    {
+                        Show = false,
+                        Dimension =new int[0][],
+                        Pieces = new Piece[]
+                        {
+                            new Piece{Lte=6, Color ="green"},
+                            new Piece { Gt=6, Lte=8, Color = "red"},
+                            new Piece{Gt=8, Lte=14, Color = "green"},
+                            new Piece { Gt=14, Lte=17, Color = "red"},
+                            new Piece { Gt=17, Color = "green"},
+                        }
+                    }
+                },
+                Series = new Line[]
+                {
+                    new Line
+                    {
+                        Name = "用电量",
+                        Smooth = true,
+                        Data = new double[]{ 300, 280, 250, 260, 270, 300, 550, 500, 400, 390, 380, 390, 400, 500, 600, 750, 800, 700, 600, 400 }
+                        .Select(val => new SeriesData(){Value = val}).ToArray(),
+                        MarkArea = new MarkArea
+                        {
+                            
+                        }
+                    }
+                }
+
+            };
+            this.StateHasChanged();
+        }
+
+    }
+
+}
