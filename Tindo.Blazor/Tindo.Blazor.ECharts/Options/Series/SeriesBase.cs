@@ -58,7 +58,7 @@
 
         public SeriesSampling? Sampling { get; set; }
 
-        public JsonObject[] Dimensions { get; set; }
+        public Dimension[] Dimensions { get; set; }
 
         public JsonObject Encode { get; set; }
 

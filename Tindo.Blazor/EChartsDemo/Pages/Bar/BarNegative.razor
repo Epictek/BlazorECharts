@@ -1,0 +1,115 @@
+﻿@page "/bar-negative"
+
+<TindoECharts Style="@style" Option="@option"></TindoECharts>
+
+@code {
+    private string style = "width: 600px;height:400px;";
+
+    private Option option;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            option = new Option
+            {
+                Tooltip = new Tooltip
+                {
+                    Trigger = TooltipTrigger.Axis,
+                    AxisPointer = new AxisPointer
+                    {
+                        Type = AxisPointerType.Shadow,
+                    }
+                },
+                Legend = new Legend
+                {
+                    Data = new LegendData[]
+                    {
+                        new LegendData{ Name = "利润" },
+                        new LegendData{ Name = "支出" },
+                        new LegendData { Name = "收入"}
+                    }
+                },
+                Grid = new Grid
+                {
+                    Left = "3%",
+                    Right = "4%",
+                    Bottom = "3%",
+                    ContainLabel = true,
+                },
+                XAxis = new XAxis
+                {
+                    Type = AxisType.Value,
+                },
+                YAxis = new YAxis
+                {
+                    Type = AxisType.Category,
+                    AxisTick = new AxisTick
+                    {
+                        Show = false,
+                    },
+                    Data = new AxisData[]
+                    {
+                        new AxisData{Value = "周一"},
+                        new AxisData{Value = "周二"},
+                        new AxisData{Value = "周三"},
+                        new AxisData{Value = "周四"},
+                        new AxisData{Value = "周五"},
+                        new AxisData{Value = "周六"},
+                        new AxisData{Value = "周日"},
+                    }
+                },
+                Series = new Bar[]
+                {
+                    new Bar
+                    {
+                        Name = "利润",
+                        Label = new Label{ Show = true, Position = LabelPosition.Inside},
+                        Data = new SeriesData[]{
+                            new SeriesData { Value = 200},
+                            new SeriesData { Value = 170},
+                            new SeriesData { Value = 240},
+                            new SeriesData { Value = 244},
+                            new SeriesData { Value = 200},
+                            new SeriesData { Value = 220},
+                            new SeriesData { Value = 210},
+                        }
+                    },
+                    new Bar
+                    {
+                        Name = "收入",
+                        Label = new Label{ Show = true},
+                        Stack = "总量",
+                        Data = new SeriesData[]{
+                            new SeriesData { Value = 320},
+                            new SeriesData { Value = 302},
+                            new SeriesData { Value = 341},
+                            new SeriesData { Value = 374},
+                            new SeriesData { Value = 390},
+                            new SeriesData { Value = 450},
+                            new SeriesData { Value = 420},
+                        }
+                    },
+                    new Bar
+                    {
+                        Name = "支出",
+                        Label = new Label{ Show = true, Position = LabelPosition.Left},
+                        Stack = "总量",
+                        Data = new SeriesData[]{
+                            new SeriesData { Value = -120},
+                            new SeriesData { Value = -132},
+                            new SeriesData { Value = -101},
+                            new SeriesData { Value = -134},
+                            new SeriesData { Value = -190},
+                            new SeriesData { Value = -230},
+                            new SeriesData { Value = -210},
+                        }
+                    }
+                }
+            };
+            this.StateHasChanged();
+        }
+
+    }
+
+}

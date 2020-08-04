@@ -62,6 +62,34 @@
         </ul>
             }
         </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" @onclick="()=> expandBar = !expandBar">
+                @if (expandBar)
+                {
+                    <span class="oi oi-minus" aria-hidden="true"> </span>
+                }
+                else
+                {
+                    <span class="oi oi-plus" aria-hidden="true"></span>
+                }
+                Bar
+            </NavLink>
+            @if (expandBar)
+            {
+        <ul class="nav flex-column">
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="bar-background">
+                    <span class="oi oi-signal" aria-hidden="true"></span> Bar Background
+                </NavLink>
+            </li>
+            <li class="nav-item px-3">
+                <NavLink class="nav-link" href="bar-negative">
+                    <span class="oi oi-signal" aria-hidden="true"></span> Bar Negative
+                </NavLink>
+            </li>
+        </ul>
+            }
+        </li>
     </ul>
 </div>
 
