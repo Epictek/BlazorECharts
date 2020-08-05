@@ -1,0 +1,86 @@
+﻿@page "/bar-polar-stack"
+
+<TindoECharts Style="@style" Option="@option"></TindoECharts>
+
+@code {
+    private string style = "width: 600px;height:400px;";
+
+    private Option option;
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            option = new Option
+            {
+                AngleAxis = new AngleAxis(),
+
+                RadiusAxis = new RadiusAxis
+                {
+                    Type = AxisType.Category,
+                    Data = new AxisData[]
+                    {
+                        new AxisData{Value = "周一"},
+                        new AxisData{Value = "周二"},
+                        new AxisData{Value = "周三"},
+                        new AxisData{Value = "周四"},
+                    },
+                    Z = 10,
+                },
+                Polar = new Polar(),
+                Legend = new Legend
+                {
+                    Show = true,
+                    Data = new LegendData[]
+                    {
+                        new LegendData {Name = "A"},
+                        new LegendData {Name = "B"},
+                        new LegendData { Name = "C"}
+                    }
+                },
+                Series = new Bar[]
+                {
+                    new Bar
+                    {
+                        CoordinateSystem = CoordinateSystem.Polar,
+                        Name = "A",
+                        Stack = "a",
+                        Data = new SeriesData[]{
+                            new SeriesData { Value = 1},
+                            new SeriesData{Value=2},
+                            new SeriesData{Value = 3},
+                            new SeriesData{Value = 4},
+                        }
+                    },
+                    new Bar
+                    {
+                        CoordinateSystem = CoordinateSystem.Polar,
+                        Name = "B",
+                        Stack = "a",
+                        Data = new SeriesData[]{
+                            new SeriesData { Value = 2},
+                            new SeriesData{Value=4},
+                            new SeriesData{Value = 6},
+                            new SeriesData{Value = 8},
+                        }
+                    },
+                    new Bar
+                    {
+                        CoordinateSystem = CoordinateSystem.Polar,
+                        Name = "C",
+                        Stack = "ca",
+                        Data = new SeriesData[]{
+                            new SeriesData { Value = 1},
+                            new SeriesData{Value=2},
+                            new SeriesData{Value = 3},
+                            new SeriesData{Value = 4},
+                        }
+                    },
+
+                }
+            };
+            this.StateHasChanged();
+        }
+
+    }
+}

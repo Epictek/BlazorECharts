@@ -50,7 +50,7 @@
 
         public AreaStyle AreaStyle { get; set; }
 
-        public Emphasis Emphasis { get; set; }
+        
 
         public UnionType<bool, double> Smooth { get; set; }
 

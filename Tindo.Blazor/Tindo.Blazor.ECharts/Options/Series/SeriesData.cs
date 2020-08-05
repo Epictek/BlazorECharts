@@ -10,8 +10,6 @@
 
         public ItemStyle ItemStyle { get; set; }
 
-        public Emphasis Emphasis { get; set; }
-
         public Tooltip Tooltip { get; set; }
 
     }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Tindo.Blazor.ECharts.Options.Series
+﻿namespace Tindo.Blazor.ECharts.Options.Series
 {
     public class LineSeriesData : SeriesData
     {
@@ -15,5 +11,7 @@ namespace Tindo.Blazor.ECharts.Options.Series
         public bool? SymbolKeepAspect { get; set; }
 
         public object[] SymbolOffset { get; set; }
+
+        public Emphasis Emphasis { get; set; }
     }
 }

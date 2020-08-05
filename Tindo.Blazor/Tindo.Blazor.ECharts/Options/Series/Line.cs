@@ -4,5 +4,6 @@
     {
         public override string Type => nameof(Line).ToLower();
 
+        public Emphasis Emphasis { get; set; }
     }
 }

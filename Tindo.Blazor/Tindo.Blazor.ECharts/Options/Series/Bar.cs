@@ -14,6 +14,7 @@ namespace Tindo.Blazor.ECharts.Options.Series
 
         public BackgroundStyle BackgroundStyle { get; set; }
 
+        public Emphasis Emphasis { get; set; }
 
         public UnionType<string, double> BarWidth { get; set; }
 
@@ -27,7 +28,6 @@ namespace Tindo.Blazor.ECharts.Options.Series
 
         public string BarCategoryGap { get; set; }
 
-
         public bool? Large { get; set; }
 
         public double? LargeThreshold { get; set; }
@@ -37,10 +37,6 @@ namespace Tindo.Blazor.ECharts.Options.Series
         public double? ProgressiveThreshold { get; set; }
 
         public ProgressiveChunkMode? ProgressiveChunkMode { get; set; }
-
-   
-
-
 
     }
 }

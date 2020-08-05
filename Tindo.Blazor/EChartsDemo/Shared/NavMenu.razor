@@ -23,43 +23,43 @@
             </NavLink>
             @if (expandLine)
             {
-        <ul class="nav flex-column">
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="line-simple">
-                    <span class="oi oi-signal" aria-hidden="true"></span> Simple
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="area-basic">
-                    <span class="oi oi-signal" aria-hidden="true"></span> Area Basic
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="line-smooth">
-                    <span class="oi oi-signal" aria-hidden="true"></span> Smooth
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="area-stack">
-                    <span class="oi oi-signal" aria-hidden="true"></span> Area Stack
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="line-stack">
-                    <span class="oi oi-signal" aria-hidden="true"></span> Line Stack
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="line-function">
-                    <span class="oi oi-signal" aria-hidden="true"></span> Line Function
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="line-polar">
-                    <span class="oi oi-signal" aria-hidden="true"></span> Line Polar
-                </NavLink>
-            </li>
-        </ul>
+                <ul class="nav flex-column">
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="line-simple">
+                            <span class="oi oi-signal" aria-hidden="true"></span> Simple
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="area-basic">
+                            <span class="oi oi-signal" aria-hidden="true"></span> Area Basic
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="line-smooth">
+                            <span class="oi oi-signal" aria-hidden="true"></span> Smooth
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="area-stack">
+                            <span class="oi oi-signal" aria-hidden="true"></span> Area Stack
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="line-stack">
+                            <span class="oi oi-signal" aria-hidden="true"></span> Line Stack
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="line-function">
+                            <span class="oi oi-signal" aria-hidden="true"></span> Line Function
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="line-polar">
+                            <span class="oi oi-signal" aria-hidden="true"></span> Line Polar
+                        </NavLink>
+                    </li>
+                </ul>
             }
         </li>
         <li class="nav-item px-3">
@@ -76,18 +76,46 @@
             </NavLink>
             @if (expandBar)
             {
-        <ul class="nav flex-column">
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="bar-background">
-                    <span class="oi oi-signal" aria-hidden="true"></span> Bar Background
-                </NavLink>
-            </li>
-            <li class="nav-item px-3">
-                <NavLink class="nav-link" href="bar-negative">
-                    <span class="oi oi-signal" aria-hidden="true"></span> Bar Negative
-                </NavLink>
-            </li>
-        </ul>
+                <ul class="nav flex-column">
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="bar-background">
+                            <span class="oi oi-signal" aria-hidden="true"></span> Bar Background
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="bar-negative">
+                            <span class="oi oi-signal" aria-hidden="true"></span> Bar Negative
+                        </NavLink>
+                    </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="bar-polar-stack">
+                            <span class="oi oi-signal" aria-hidden="true"></span> Bar Polar Stack
+                        </NavLink>
+                    </li>
+                </ul>
+            }
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" @onclick="()=> expandPie = !expandPie">
+                @if (expandPie)
+                {
+                    <span class="oi oi-minus" aria-hidden="true"> </span>
+                }
+                else
+                {
+                    <span class="oi oi-plus" aria-hidden="true"></span>
+                }
+                Pie
+            </NavLink>
+            @if (expandPie)
+            {
+                <ul class="nav flex-column">
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="pie-doughnut">
+                            <span class="oi oi-pie-chart" aria-hidden="true"></span> Pie Doughnut
+                        </NavLink>
+                    </li>
+                </ul>
             }
         </li>
     </ul>
