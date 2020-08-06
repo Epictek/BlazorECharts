@@ -115,6 +115,34 @@
                             <span class="oi oi-pie-chart" aria-hidden="true"></span> Pie Doughnut
                         </NavLink>
                     </li>
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="pie-simple">
+                            <span class="oi oi-pie-chart" aria-hidden="true"></span> Pie Simple
+                        </NavLink>
+                    </li>
+                </ul>
+            }
+        </li>
+        <li class="nav-item px-3">
+            <NavLink class="nav-link" @onclick="()=> expandScatter = !expandScatter">
+                @if (expandScatter)
+                {
+                    <span class="oi oi-minus" aria-hidden="true"> </span>
+                }
+                else
+                {
+                    <span class="oi oi-plus" aria-hidden="true"></span>
+                }
+                Scatter
+            </NavLink>
+            @if (expandScatter)
+            {
+                <ul class="nav flex-column">
+                    <li class="nav-item px-3">
+                        <NavLink class="nav-link" href="scatter-simple">
+                            <span class="oi oi-action-redo" aria-hidden="true"></span> Scatter Simple
+                        </NavLink>
+                    </li>
                 </ul>
             }
         </li>
