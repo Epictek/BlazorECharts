@@ -14,11 +14,11 @@
 
         public Color ShadowColor { get; set; }
 
-        public double ShadowBlur { get; set; }
+        public double? ShadowBlur { get; set; }
 
-        public double ShadowOffsetX { get; set; }
+        public double? ShadowOffsetX { get; set; }
 
-        public double ShadowOffsetY { get; set; }
+        public double? ShadowOffsetY { get; set; }
 
         public JsonObject Rich { get; set; }
     }

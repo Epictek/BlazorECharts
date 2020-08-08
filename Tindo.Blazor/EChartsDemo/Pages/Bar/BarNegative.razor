@@ -59,9 +59,9 @@
                         new AxisData{Value = "周日"},
                     }
                 },
-                Series = new Bar[]
+                Series = new BarSeries[]
                 {
-                    new Bar
+                    new BarSeries
                     {
                         Name = "利润",
                         Label = new Label{ Show = true, Position = LabelPosition.Inside},
@@ -75,7 +75,7 @@
                             new SeriesData { Value = 210},
                         }
                     },
-                    new Bar
+                    new BarSeries
                     {
                         Name = "收入",
                         Label = new Label{ Show = true},
@@ -90,7 +90,7 @@
                             new SeriesData { Value = 420},
                         }
                     },
-                    new Bar
+                    new BarSeries
                     {
                         Name = "支出",
                         Label = new Label{ Show = true, Position = LabelPosition.Left},

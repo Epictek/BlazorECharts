@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options.Series
 {
-    public class Bar : SeriesBase
+    public class BarSeries : SeriesBase
     {
-        public override string Type => nameof(Bar).ToLower();
+        public override string Type => "bar";
 
         public bool? RoundCap { get; set; }
 

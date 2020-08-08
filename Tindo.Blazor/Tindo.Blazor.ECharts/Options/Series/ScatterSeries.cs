@@ -4,9 +4,9 @@ using System.Text;
 
 namespace Tindo.Blazor.ECharts.Options.Series
 {
-    public class Scatter : SeriesBase
+    public class ScatterSeries : SeriesBase
     {
-        public override string Type => nameof(Scatter).ToLower();
+        public override string Type => "scatter";
 
         public int? GeoIndex { get; set; }
 

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Tindo.Blazor.ECharts.Options.SubOptions;
-
-namespace Tindo.Blazor.ECharts.Options.Series
+﻿namespace Tindo.Blazor.ECharts.Options.Series
 {
-    public class Pie : SeriesBase
+    public class PieSeries : SeriesBase
     {
-        public override string Type => nameof(Pie).ToLower();
+        public override string Type => "pie";
 
         public double? HoverOffset { get; set; }
 

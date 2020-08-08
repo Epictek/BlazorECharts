@@ -50,7 +50,6 @@
 
         public AreaStyle AreaStyle { get; set; }
 
-        
 
         public UnionType<bool, double> Smooth { get; set; }
 

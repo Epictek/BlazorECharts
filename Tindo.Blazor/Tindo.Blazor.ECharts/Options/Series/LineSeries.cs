@@ -1,8 +1,8 @@
 ﻿namespace Tindo.Blazor.ECharts.Options.Series
 {
-    public class Line : SeriesBase
+    public class LineSeries : SeriesBase
     {
-        public override string Type => nameof(Line).ToLower();
+        public override string Type => "line";
 
         public Emphasis Emphasis { get; set; }
     }
