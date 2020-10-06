@@ -1,1 +1,2 @@
-[Online Demo](https://blazorecharts.azurewebsites.net/)
+# ECharts Blazor
+

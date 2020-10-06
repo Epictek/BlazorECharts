@@ -1,0 +1,98 @@
+﻿<div id="@Id" class="@Class" style="@Style"></div>
+
+@code { private string id = "echart-" + DateTime.Now.Ticks;
+
+    [Parameter]
+    public string Id { get; set; }
+
+    [Parameter]
+    public string Class { get; set; }
+
+    [Parameter]
+    public string Style { get; set; }
+
+    [Parameter]
+    public Option Option { get; set; }
+
+    [Parameter]
+    public Opts Opts { get; set; }
+
+    [Parameter]
+    public bool NotMerge { get; set; }
+
+    [Parameter]
+    public bool LazyUpdate { get; set; }
+
+    [Parameter]
+    public bool Loading { get; set; }
+
+    [Parameter]
+    public string Theme { get; set; } = "light";
+
+    [JSInvokable]
+    public async Task OnDataZoom()
+    {
+        Console.WriteLine("I AM ZOOM");
+        DataZoomEvent?.Invoke(this, null);
+    }
+
+    [Inject]
+    public IJSRuntime JSRuntime { get; set; }
+
+    public event EventHandler DataZoomEvent;
+
+
+    protected override async Task OnInitializedAsync()
+    {
+        await JSRuntime.InvokeVoidAsync("invokeECharts.InitDotnetRef", DotNetObjectReference.Create(this));
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (!firstRender) return;
+
+        if (string.IsNullOrWhiteSpace(Id))
+        {
+            Id = id;
+        }
+
+        if (await JSRuntime.Exist(Id))
+        {
+            await SetLoading();
+        }
+
+        await JSRuntime.InitCallback(Id);
+    }
+
+
+
+    async Task SetLoading()
+    {
+        if (Loading)
+        {
+            await JSRuntime.ShowLoading(Id);
+        }
+        else
+        {
+            await JSRuntime.HideLoading(Id);
+        }
+    }
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (string.IsNullOrWhiteSpace(Id))
+        {
+            Id = id;
+        }
+
+        if (await JSRuntime.Exist(Id))
+        {
+            await JSRuntime.InitChart(Id, Theme, Opts);
+            if (Option != null)
+            {
+                await JSRuntime.SetOpton(Id, Option, NotMerge, LazyUpdate);
+            }
+            await SetLoading();
+        }
+    } }
